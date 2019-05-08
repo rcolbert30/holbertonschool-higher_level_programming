@@ -5,4 +5,3 @@ def no_c(my_string):
         if i not in ['c', 'C']:
             string = string + i
     return (string)
-
