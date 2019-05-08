@@ -4,4 +4,7 @@ def max_integer(my_list=[]):
     for l in my_list:
         if l > _max:
             _max = l
-        return (my_list[l])
+        elif not my_list:
+            return None
+        else:
+            return (my_list[l])
