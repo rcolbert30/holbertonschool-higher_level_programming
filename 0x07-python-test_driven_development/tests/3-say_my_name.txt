@@ -1,0 +1,19 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("Dirty", "Dan")
+My name is Dirty Dan
+
+>>> say_my_name(12, "White") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError: ...
+
+>>> say_my_name("White", 12) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError: ...
+
+>>> say_my_name() #doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError: ...
+
+>>> say_my_name("Jeff")
+My name is Jeff
