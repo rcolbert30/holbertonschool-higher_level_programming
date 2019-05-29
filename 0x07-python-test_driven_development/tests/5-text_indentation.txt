@@ -1,0 +1,26 @@
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("oakland:raiders")
+oakland
+<BLANKLINE>
+raiders
+<BLANKLINE>
+
+>>> text_indentation("oakland:::warriors")
+oakland:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+warriors
+<BLANKLINE>
+
+>>> text_indentation(69)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation("hello")
+hello
+
