@@ -83,3 +83,23 @@ class Base():
             for c in lfg:
                 lob.append(cls.create(**d))
             return lob
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv"""
+        if list_objs is None:
+            list_objs = []
+        if cls.__name__ == "Rectangle":
+            with open(cls.__name__ + ".csv", "w+") as f:
+                Rec = ["id", "width", "height", "x", "y"]
+                writes = csv.DictWriter(f, Rec)
+                writes.writeheader()
+                for a in list_objs:
+                    writes.writerow(a.to_dictionary())
+        elif cls.__name__ == "Square":
+            with open(cls.__name__ + ".csv", "w+") as f:
+                sq = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(f, sq)
+                writer.writeheader()
+                for a in list_objs:
+                    writer.writerow(a.to_dictionary())
