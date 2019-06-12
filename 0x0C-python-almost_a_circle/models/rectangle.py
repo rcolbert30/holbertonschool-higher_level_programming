@@ -105,9 +105,18 @@ class Rectangle(Base):
                 self.__x = args[3]
             if len(args) > 4:
                 self.__y = args[4]
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+        elif kwargs is not None:
+            for (key, value) in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
 
     def to_dictionary(self):
         '''returns the dictionary representation of rectangle'''
