@@ -1,14 +1,16 @@
 #!/usr/bin/python3
+'''Base Module'''
 import json
 import csv
 
 
 class Base():
-
+    '''Base Module id assignment'''
     __nb_objects = 0
 
-    def __init__(self,id=None):
-        if id != None:
+    def __init__(self, id=None):
+        '''intiate id'''
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -16,6 +18,7 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        ''' to json string'''
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return ("[]")
         else:
