@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-
+'''Rectangle Module'''
 from models.base import Base
+
 
 class Rectangle(Base):
 
-
     def __init__(self, width, height, x=0, y=0, id=None):
+        ''' instantation of width, height, x, y and id'''
         super().__init__(id)
         self.width = width
         self.height = height
@@ -14,10 +15,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        '''width getter'''
         return(self.__width)
 
     @width.setter
     def width(self, value):
+        '''width setter'''
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -27,10 +30,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        '''height getter'''
         return (self.__width)
 
     @height.setter
     def height(self, value):
+        ''' height setter'''
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -40,10 +45,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        '''x getter'''
         return (self.__x)
 
     @x.setter
     def x(self, value):
+        '''x setter '''
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -53,10 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        '''y getter'''
         return (self.__y)
 
     @x.setter
     def y(self, value):
+        ''' y setter'''
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -81,7 +90,8 @@ class Rectangle(Base):
 
     def __str__(self):
         '''returns string representation'''
-        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format
+                (self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         '''assigns argument to each attribute'''
