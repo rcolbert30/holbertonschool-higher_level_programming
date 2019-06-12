@@ -79,12 +79,12 @@ class Rectangle(Base):
 
     def display(self):
         """display method"""
-        for i in range(self.y):
+        for i in range(0, self.y):
             print()
-        for i in range(self.height):
-            for l in range(self.x):
+        for i in range(0, self.height):
+            for l in range(0, self.x):
                 print(" ", end="")
-            for l in range(self.width):
+            for l in range(0, self.width):
                 print("#", end="")
             print()
 
@@ -95,16 +95,15 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         '''assigns argument to each attribute'''
-        if len(args) is not 0:
-            if len(args) >= 1:
-                self.id = args[0]
-            if len(args) >= 2:
+        if len(args) > 0:
+            self.id = args[0]
+            if len(args) > 1:
                 self.width = args[1]
-            if len(args) >= 3:
+            if len(args) > 2:
                 self.height = args[2]
-            if len(args) >= 4:
+            if len(args) > 3:
                 self.__x = args[3]
-            if len(args) >= 5:
+            if len(args) > 4:
                 self.__y = args[4]
         else:
             for key, value in kwargs.items():
