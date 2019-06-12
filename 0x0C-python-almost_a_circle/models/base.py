@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import json
+import csv
+
 
 class Base():
 
@@ -19,14 +21,13 @@ class Base():
         else:
             return json.dumps(list_dictionaries)
 
-    @staticmethod
+    @classmethod
     def save_to_file(cls, list_objs):
-        '''writes the JSON string of list_objs to a file'''
+        """save_to_file method"""
         if list_objs is None:
-        with open(cls.__name__ + ".json", "w+") as f:
-            f.write("[]")
+            with open(cls.__name__ + ".json", "w+") as f:
+                f.write("[]")
         else:
             with open(cls.__name__ + ".json", "w+") as f:
                 f.write(Base.to_json_string([x.to_dictionary()
                                             for x in list_objs]))
-    
