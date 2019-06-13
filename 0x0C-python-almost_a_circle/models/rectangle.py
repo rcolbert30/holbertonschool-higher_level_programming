@@ -119,7 +119,7 @@ class Rectangle(Base):
         a_dict = {}
         a_dict["id"] = self.id
         a_dict["width"] = self.width
-        a_dicr["height"] = self.height
+        a_dict["height"] = self.height
         a_dict["x"] = self.x
         a_dict["y"] = self.y
         return a_dict
