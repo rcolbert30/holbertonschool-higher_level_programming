@@ -51,7 +51,7 @@ class TestRectangle(unittest.TestCase):
         r.update(69, 6, 7, 8,)
         self.assertEqual(8, r.x)
         r.update(69, 6, 7, 8, 9)
-        self.assertEqual(8, r.y)
+        self.assertEqual(9, r.y)
 
     def test_str(self):
         r = Rectangle(4, 6, 2, 1, 12)

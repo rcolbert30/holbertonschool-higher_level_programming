@@ -27,7 +27,7 @@ class TestSquare(unittest.TestCase):
 
     def test_str(self):
         r = Square(3, 6, 9, 12)
-        self.assertEqual("[Square] (12) 6/6 - 3", str(r))
+        self.assertEqual("[Square] (12) 6/9 - 3", str(r))
 
     def test_size(self):
         s = Square(5, 4, 3, 2)
@@ -52,4 +52,4 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s_dict['id'], 12)
         self.assertEqual(s_dict['size'], 3)
         self.assertEqual(s_dict['x'], 6)
-        self.assertEqual(s_dict['y'], 6)
+        self.assertEqual(s_dict['y'], 9)
