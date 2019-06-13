@@ -19,7 +19,7 @@ class TestRectangle(unittest.TestCase):
         a2 = Rectangle(2, 10)
         a3 = Rectangle(10, 20)
         self.assertEqual(a2.id + 1, a3.id)
-        
+
     def test_set(self):
         a = Rectangle(10, 2)
         a2 = Rectangle(2, 10)
@@ -39,7 +39,7 @@ class TestRectangle(unittest.TestCase):
             x = Rectangle(10, 2, 5.0, 4.0)
         with self.assertRaises(TypeError):
             x = Rectangle(1.0, 2.0, 3.0, 4.0)
-    
+
     def test_set_4(self):
         r = Rectangle(10, 2, 30)
         r.update(69)
@@ -63,7 +63,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(69, r.id)
 
     def test_dict(self):
-        r= Rectangle(30, 11, 35, 23, 6)        
+        r = Rectangle(31, 11, 35, 23, 6)
         r_dict = r.to_dictionary
         self.assertEqual(r_dict['id'], 6)
         self.assertEqual(r_dict['width'], 30)
