@@ -46,17 +46,10 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """dict to instance"""
-        if dictionary is None:
-            return
-        if cls.__name__ == "Base":
-            if "id" in dictionary.keys():
-                return cls(dictionary["id"])
-            else:
-                return cls()
-        else:
-            retcls = cls(4, 4, 4)
-            retcls.update(**dictionary)
-            return retcls
+        new = cls(2, 2)
+        if new is not None:
+            new.update(**dictionary)
+        return new
 
     @classmethod
     def load_from_file(cls):
