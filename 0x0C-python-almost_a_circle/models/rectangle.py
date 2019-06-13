@@ -30,7 +30,7 @@ class Rectangle(Base):
     @property
     def height(self):
         '''height getter'''
-        return (self.__width)
+        return (self.__height)
 
     @height.setter
     def height(self, value):
@@ -51,7 +51,7 @@ class Rectangle(Base):
         '''x setter '''
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("x must be > 0")
         self.__x = value
 
@@ -65,13 +65,13 @@ class Rectangle(Base):
         ''' y setter'''
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("x must be > 0")
         self.__y = value
 
     def area(self):
         '''area method'''
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def display(self):
         """display method"""
