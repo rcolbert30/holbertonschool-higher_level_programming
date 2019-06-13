@@ -23,4 +23,33 @@ class TestSquare(unittest.TestCase):
 
     def test_area(self):
         s = Square(10, 2)
-        self.assertEqual(s.area(), 20)
+        self.assertEqual(s.area(), 100)
+
+    def test_str(self):
+        r = Square(3, 6, 9, 12)
+        self.assertEqual("[Square] (12) 6/6 - 3", str(r))
+
+    def test_size(self):
+        s = Square(5, 4, 3, 2)
+        s.size = 69
+        self.assertEqual(69, s.height)
+        self.assertEqual(69, s.size)
+        self.assertEqual(69, s.width)
+
+    def test_size_2(self):
+        s = Square(5, 0, 0, 2)
+        with self.assertRaises(ValueError):
+            s.size = 0
+        s = Square(3, 6, 9, 12)
+        with self.assertRaises(TypeError):
+            s.size = 5.0
+        with self.assertRaises(TypeError):
+            s.size = "string"
+
+    def test_to_dictionary(self):
+        s = Square(3, 6, 9, 12)
+        s_dict = s.to_dictionary()
+        self.assertEqual(s_dict['id'], 12)
+        self.assertEqual(s_dict['size'], 3)
+        self.assertEqual(s_dict['x'], 6)
+        self.assertEqual(s_dict['y'], 6)
