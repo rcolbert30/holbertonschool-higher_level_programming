@@ -70,5 +70,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r_dict['x'], 35)
         self.assertEqual(r_dict['y'], 23)'''
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_rec(self):
+        with self.assertRaises(ValueError):
+            x = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            x = Rectangle(1,-2)
+        with self.assertRaises(ValueError):
+            x = Rectangle(1, 2, -3)
+
+    def test_load_from_file(self):
+        p = Rectangle.load_from_file()        
+        self.assertEqual(p, [])

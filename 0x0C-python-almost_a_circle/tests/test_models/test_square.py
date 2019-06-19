@@ -13,7 +13,13 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             s = Square(13, 12, -69, -96)
         with self.assertRaises(TypeError):
-            s = Square("test", "this")
+            s = Square("1")
+        with self.assertRaises(TypeError):
+            s = Square(1, "2")
+        with self.assertRaises(ValueError):
+            s = Square(-1)
+        with self.assertRaises(ValueError):
+            s = Square(1, -2)
         with self.assertRaises(TypeError):
             s = Square(3, 6, 2.0, 5.0)
         with self.assertRaises(TypeError):
@@ -53,3 +59,14 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s_dict['size'], 3)
         self.assertEqual(s_dict['x'], 6)
         self.assertEqual(s_dict['y'], 9)
+
+    def test_square(self):
+        s1 = Square(1, 2)
+        self.assertEquals(s1.id, s1.id)
+
+    def test_save_to_file(self):
+        s2 = Square.save_to_file(None)
+        self.assertEqual(s2, None)
+        with self.assertRaises(TypeError):
+            s2 = Square.save_to_file([])
+
