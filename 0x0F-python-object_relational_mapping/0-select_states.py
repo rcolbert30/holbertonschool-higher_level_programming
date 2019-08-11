@@ -12,4 +12,4 @@ if __name__ == "__main__":
     states = database.cursor()
     states.execute("SELECT * FROM states ORDER BY 'states.id' ASC")
     for i in states:
-        print("{}, '{}')".format(i[0], i[1]))
+        print("({}, '{}')".format(i[0], i[1]))
