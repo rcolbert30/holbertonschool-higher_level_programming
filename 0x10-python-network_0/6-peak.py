@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
+
 def find_peak(list_of_integers):
+
     max_int = None
 
     for i in list_of_integers:
