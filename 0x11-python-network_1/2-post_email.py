@@ -7,6 +7,6 @@ if __name__ == "__main__":
     url = argv[1]
 
     payload = urllib.parse.urlencode({'email': argv[2]})
-    payload = payload.encode('ascii') # data should be bytes
+    payload = payload.encode('ascii')  # data should be bytes
     with urllib.request.urlopen(url, payload) as response:
         print(response.read().decode('utf-8'))
