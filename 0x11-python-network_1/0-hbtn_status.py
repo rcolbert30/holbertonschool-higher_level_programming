@@ -9,5 +9,5 @@ if __name__ == "__main__":
         utf = info.decode("utf-8")
         print("Body response:")
         print("\t- type: {}".format(type(info)))
-        print("\t- content:{}".format(info))
+        print("\t- content: {}".format(info))
         print("\t- utf8 content: {}".format(utf))
