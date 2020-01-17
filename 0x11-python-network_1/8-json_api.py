@@ -16,7 +16,7 @@ if __name__ == "__main__":
     response = post('http://0.0.0.0:5000/search_user', data=p)
 
     try:
-        response = req.json()
+        response = r.json()
         if len(r) == 0:
             raise KeyError()
     except KeyError:
