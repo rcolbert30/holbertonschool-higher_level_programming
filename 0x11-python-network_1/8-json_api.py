@@ -13,11 +13,11 @@ if __name__ == "__main__":
     else:
         l = argv[1]
     p = {'q': l}
-    response = post('http://0.0.0.0:5000/search_user', data=p)
+    r = post('http://0.0.0.0:5000/search_user', data=p)
 
     try:
         response = r.json()
-        if len(r) == 0:
+        if len(response) == 0:
             raise KeyError()
     except KeyError:
         print("No result")
