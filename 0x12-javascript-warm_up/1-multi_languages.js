@@ -1,9 +1,9 @@
 #!/usr/bin/node
 // prints 3 line
 
-let C = 'C is fun';
-let P = 'Python is cool';
-let J = 'Javascript is amazing';
+const C = 'C is fun';
+const P = 'Python is cool';
+const J = 'Javascript is amazing';
 
 console.log(C);
 console.log(P);
