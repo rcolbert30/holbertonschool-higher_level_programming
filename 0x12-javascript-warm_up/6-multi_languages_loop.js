@@ -2,7 +2,8 @@
 // script that prints from an array using a loop
 
 const words = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+let index;
 
-words.forEach(function (item, array) {
-  console.log(item);
-});
+for (index = 0; index < words.length; index++) {
+  console.log(words[index]);
+}
