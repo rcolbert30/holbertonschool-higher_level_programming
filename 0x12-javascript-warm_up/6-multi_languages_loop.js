@@ -7,3 +7,9 @@ let index;
 for (index = 0; index < words.length; index++) {
   console.log(words[index]);
 }
+
+/*
+words.forEach(function(index, words) {
+  console.log(index,words);
+}
+*/
