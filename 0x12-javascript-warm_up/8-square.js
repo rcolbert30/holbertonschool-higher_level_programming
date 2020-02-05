@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // prints a square, size of first arg
 
-let x = process.argv[2];
+const x = process.argv[2];
 let idx;
 
 if (isNaN(x)) {
